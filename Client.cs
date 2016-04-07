@@ -58,6 +58,8 @@ namespace BlockEngine {
         }
 
         protected override void Draw(GameTime gameTime) {
+            GraphicsDevice.Clear(Color.CornflowerBlue);
+
             BasicEffect effect = new BasicEffect(GraphicsDevice);
 
             VertexPositionColor[] vertices = new VertexPositionColor[3];
@@ -68,7 +70,6 @@ namespace BlockEngine {
             VertexBuffer buffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor), 3, BufferUsage.WriteOnly);
             buffer.SetData<VertexPositionColor>(vertices);
 
-            GraphicsDevice.Clear(Color.CornflowerBlue);
             GraphicsDevice.BlendState = BlendState.Opaque;
             GraphicsDevice.RasterizerState = RasterizerState.CullNone;
             GraphicsDevice.SetVertexBuffer(buffer);

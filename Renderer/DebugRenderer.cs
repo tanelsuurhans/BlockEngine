@@ -1,11 +1,10 @@
 ﻿using BlockEngine.Debug;
 using BlockEngine.Graphics;
-using BlockEngine.Input;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
+using System;
 using System.Diagnostics;
 
 namespace BlockEngine.Renderer {
@@ -16,23 +15,21 @@ namespace BlockEngine.Renderer {
         private SpriteFont spriteFont;
 
         private DebugManager debugManager;
-        private KeyboardManager keyboardManager;
         private ScreenManager screenManager;
         private CameraManager cameraManager;
 
         private Process process;
 
         public DebugRenderer(Client client) : base(client) {
+            this.Visible = false;
         }
 
         public override void Initialize() {
             this.screenManager = Game.Services.GetService<ScreenManager>();
             this.debugManager = Game.Services.GetService<DebugManager>();
-            this.keyboardManager = Game.Services.GetService<KeyboardManager>();
             this.cameraManager = Game.Services.GetService<CameraManager>();
 
             this.process = Process.GetCurrentProcess();
-            this.Visible = false;
 
             base.Initialize();
         }
@@ -42,13 +39,6 @@ namespace BlockEngine.Renderer {
             this.spriteBatch = new SpriteBatch(Game.GraphicsDevice);
 
             base.LoadContent();
-        }
-
-        public override void Update(GameTime gameTime) {
-            if (this.keyboardManager.IsKeyPressed(Keys.F1))
-                this.Visible = !this.Visible;
-
-            base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime) {
@@ -74,6 +64,10 @@ namespace BlockEngine.Renderer {
 
         private Vector2 TextLocation(string text, int order) {
             return new Vector2(10, this.spriteFont.MeasureString(text).Y * order + 10);
+        }
+        
+        public void ToggleDisplay() {
+            this.Visible = !this.Visible;
         }
 
     }

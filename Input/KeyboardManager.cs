@@ -25,16 +25,18 @@ namespace BlockEngine.Input {
         }
 
         public override void Update(GameTime gameTime) {
-            this.previous = this.current;
-            this.current = Keyboard.GetState();
+            if (Game.IsActive) {
+                this.previous = this.current;
+                this.current = Keyboard.GetState();
 
-            if (IsKeyPressed(Keys.Escape))
-                Game.Exit();
+                if (IsKeyPressed(Keys.Escape))
+                    Game.Exit();
 
-            if (IsKeyPressed(Keys.F11))
-                this.screenManager.ToggleFullScreen();
+                if (IsKeyPressed(Keys.F11))
+                    this.screenManager.ToggleFullScreen();
 
-            base.Update(gameTime);
+                base.Update(gameTime);
+            }
         }
 
         public bool IsKeyDown(Keys key) {

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using BlockEngine.Graphics;
+using System;
 
 namespace BlockEngine.Input {
 
@@ -28,13 +29,16 @@ namespace BlockEngine.Input {
         }
 
         public override void Update(GameTime gameTime) {
-            this.previous = this.current;
-            this.current = Mouse.GetState();
+            System.Console.WriteLine("Game is " + Game.IsActive);
 
-            if (Game.IsActive)
+            if (Game.IsActive) {
+                this.current = Mouse.GetState();
+                this.previous = this.current;
+
                 this.CenterPosition();
-
-            base.Update(gameTime);
+                
+                base.Update(gameTime);
+            }
         }
 
         public float ChangedX() {
