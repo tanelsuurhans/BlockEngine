@@ -1,0 +1,12 @@
+C:\Users\Tanel\Projects\BlockEngine\BlockEngine\obj\x86\Debug\BlockEngine.csprojResolveAssemblyReference.cache
+C:\Users\Tanel\Projects\BlockEngine\BlockEngine\bin\DesktopGL\x86\Debug\OpenTK.dll.config
+C:\Users\Tanel\Projects\BlockEngine\BlockEngine\bin\DesktopGL\x86\Debug\BlockEngine.exe
+C:\Users\Tanel\Projects\BlockEngine\BlockEngine\bin\DesktopGL\x86\Debug\BlockEngine.pdb
+C:\Users\Tanel\Projects\BlockEngine\BlockEngine\bin\DesktopGL\x86\Debug\MonoGame.Framework.dll
+C:\Users\Tanel\Projects\BlockEngine\BlockEngine\bin\DesktopGL\x86\Debug\NVorbis.dll
+C:\Users\Tanel\Projects\BlockEngine\BlockEngine\bin\DesktopGL\x86\Debug\OpenTK.dll
+C:\Users\Tanel\Projects\BlockEngine\BlockEngine\obj\x86\Debug\BlockEngine.exe
+C:\Users\Tanel\Projects\BlockEngine\BlockEngine\obj\x86\Debug\BlockEngine.pdb
+C:\Users\Tanel\Projects\BlockEngine\BlockEngine\bin\DesktopGL\x86\Debug\Content\Fonts\Quantifier_14px.xnb
+C:\Users\Tanel\Projects\BlockEngine\BlockEngine\bin\DesktopGL\x86\Debug\Content\Effects\SkyDome.xnb
+C:\Users\Tanel\Projects\BlockEngine\BlockEngine\bin\DesktopGL\x86\Debug\Content\Models\skydome.xnb

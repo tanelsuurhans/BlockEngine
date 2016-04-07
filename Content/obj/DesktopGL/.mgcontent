@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Tanel/Projects/BlockEngine/BlockEngine/Content/Fonts/Quantifier_14px.spritefont</File>
+    <File>C:/Users/Tanel/Projects/BlockEngine/BlockEngine/Content/Models/skydome.x</File>
+    <File>C:/Users/Tanel/Projects/BlockEngine/BlockEngine/Content/Effects/SkyDome.fx</File>
+  </SourceFiles>
+</SourceFileCollection>
