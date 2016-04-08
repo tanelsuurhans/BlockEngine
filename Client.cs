@@ -14,11 +14,9 @@ namespace BlockEngine {
         private ScreenManager screenManager;
         private CameraManager cameraManager;
 
-        private MouseManager mouseManager;
-        private KeyboardManager keyboardManager;
-
         private SkyRenderer skyRenderer;
 
+        private InputManager inputManager;
         private DebugManager debugManager;
 
         public Client() {
@@ -27,19 +25,21 @@ namespace BlockEngine {
             this.graphics = new GraphicsDeviceManager(this);
 
             this.screenManager = new ScreenManager(this, graphics);
-            this.keyboardManager = new KeyboardManager(this);
-            this.mouseManager = new MouseManager(this);
             this.cameraManager = new CameraManager(this);
+
             this.skyRenderer = new SkyRenderer(this);
+
+            this.inputManager = new InputManager(this);
             this.debugManager = new DebugManager(this);
         }
 
         protected override void Initialize() {
             Components.Add(screenManager);
-            Components.Add(mouseManager);
-            Components.Add(keyboardManager);
             Components.Add(cameraManager);
+
             Components.Add(skyRenderer);
+
+            Components.Add(inputManager);
             Components.Add(debugManager);
 
             base.Initialize();
@@ -58,7 +58,7 @@ namespace BlockEngine {
         }
 
         protected override void Draw(GameTime gameTime) {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(new Color(128, 173, 254));
 
             BasicEffect effect = new BasicEffect(GraphicsDevice);
 
@@ -72,6 +72,7 @@ namespace BlockEngine {
 
             GraphicsDevice.BlendState = BlendState.Opaque;
             GraphicsDevice.RasterizerState = RasterizerState.CullNone;
+            GraphicsDevice.DepthStencilState = DepthStencilState.Default;
             GraphicsDevice.SetVertexBuffer(buffer);
 
             effect.World = Matrix.CreateTranslation(0, 0, -100);

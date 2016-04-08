@@ -42,6 +42,7 @@
     <Compile Include="Debug\DebugManager.cs" />
     <Compile Include="Graphics\CameraManager.cs" />
     <Compile Include="Graphics\ScreenManager.cs" />
+    <Compile Include="Input\InputManager.cs" />
     <Compile Include="Input\KeyboardManager.cs" />
     <Compile Include="Input\MouseManager.cs" />
     <Compile Include="Program.cs" />

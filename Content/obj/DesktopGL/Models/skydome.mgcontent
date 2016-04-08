@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Tanel/Projects/BlockEngine/BlockEngine/Content/Models/skydome.x</SourceFile>
-  <SourceTime>2016-04-03T23:57:54.6720099-04:00</SourceTime>
-  <DestFile>C:/Users/Tanel/Projects/BlockEngine/BlockEngine/Content/bin/DesktopGL/Models/skydome.xnb</DestFile>
-  <DestTime>2016-04-03T23:57:59.9985932-04:00</DestTime>
+  <SourceFile>C:/Users/Tanel/Projects/BlockEngine/BlockEngine/Content/Models/SkyDome.x</SourceFile>
+  <SourceTime>2016-04-07T22:33:36.8961585-04:00</SourceTime>
+  <DestFile>C:/Users/Tanel/Projects/BlockEngine/BlockEngine/Content/bin/DesktopGL/Models/SkyDome.xnb</DestFile>
+  <DestTime>2016-04-08T01:12:42.0284992-04:00</DestTime>
   <Importer>OpenAssetImporter</Importer>
   <ImporterTime>2016-03-30T02:36:08-04:00</ImporterTime>
   <Processor>ModelProcessor</Processor>

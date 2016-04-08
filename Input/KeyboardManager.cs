@@ -9,8 +9,6 @@ namespace BlockEngine.Input {
         private KeyboardState previous;
         private KeyboardState current;
 
-        private ScreenManager screenManager;
-
         public KeyboardManager(Client client) : base(client) {
             Game.Services.AddService<KeyboardManager>(this);
         }
@@ -19,21 +17,16 @@ namespace BlockEngine.Input {
             this.previous = Keyboard.GetState();
             this.current = Keyboard.GetState();
 
-            this.screenManager = Game.Services.GetService<ScreenManager>();
-
             base.Initialize();
         }
 
         public override void Update(GameTime gameTime) {
-            if (Game.IsActive) {
+            if (Enabled) {
                 this.previous = this.current;
                 this.current = Keyboard.GetState();
 
                 if (IsKeyPressed(Keys.Escape))
                     Game.Exit();
-
-                if (IsKeyPressed(Keys.F11))
-                    this.screenManager.ToggleFullScreen();
 
                 base.Update(gameTime);
             }

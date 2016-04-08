@@ -11,15 +11,20 @@ matrix World;
 matrix View;
 matrix Projection;
 
-float4 Color;
+float4 DayColor;
+float4 NightColor;
+float4 HorizonColor;
+
+float4 EveningTint;
+float4 MorningTint;
 
 struct VertexShaderInput {
 	float4 Position : SV_POSITION;
 };
 
 struct VertexShaderOutput {
-	float4 Position : POSITION0;
-	float4 PositionObject : TEXCOORD0;
+	float4 Position : SV_POSITION;
+	float4 Object : TEXCOORD0;
 };
 
 struct PixelShaderOutput {
@@ -33,7 +38,7 @@ VertexShaderOutput DefaultVertexShader(VertexShaderInput input) {
 	float4 viewPosition = mul(worldPosition, View);
 
 	output.Position = mul(viewPosition, Projection);
-	output.PositionObject = input.Position;
+	output.Object = input.Position;
 
 	return output;
 }
@@ -41,10 +46,17 @@ VertexShaderOutput DefaultVertexShader(VertexShaderInput input) {
 PixelShaderOutput DefaultPixelShader(VertexShaderOutput input) {
 	PixelShaderOutput output;
 
-	float4 topColor = Color;
-	float4 bottomColor = 1;
+	float4 topColor = DayColor;
+	float4 bottomColor = HorizonColor;
+	float4 nightColor = NightColor;
 
-	output.Color = lerp(bottomColor, topColor, input.PositionObject.z / 1.1);
+	bottomColor += (MorningTint * .05) * (12 / 24);
+	bottomColor += (EveningTint * .05) * (12 / 24);
+
+	topColor += nightColor;
+	bottomColor += nightColor;
+
+	output.Color = lerp(bottomColor, topColor, saturate(input.Object.z / 0.9));	
 
 	return output;
 }

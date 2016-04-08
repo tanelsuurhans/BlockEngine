@@ -12,6 +12,12 @@ namespace BlockEngine.Renderer {
         private Model skyModel;
         private Effect skyEffect;
 
+        private Vector4 DayColor = Color.SkyBlue.ToVector4();
+        private Vector4 NightColor = Color.Black.ToVector4();
+        private Vector4 HorizonColor = Color.White.ToVector4();
+        private Vector4 EveningTint = Color.Red.ToVector4();
+        private Vector4 MorningTint = Color.Gold.ToVector4();
+
         public SkyRenderer(Client client) : base(client) {
         }
 
@@ -31,10 +37,10 @@ namespace BlockEngine.Renderer {
         }
 
         public override void Draw(GameTime gameTime) {
-            GraphicsDevice.RasterizerState = new RasterizerState() { CullMode = CullMode.None, FillMode = FillMode.WireFrame };
+            GraphicsDevice.RasterizerState = new RasterizerState() { CullMode = CullMode.None };
             GraphicsDevice.DepthStencilState = DepthStencilState.DepthRead;
 
-            Matrix cameraMatrix = Matrix.CreateTranslation(new Vector3(this.cameraManager.Position.X, this.cameraManager.Position.Y, this.cameraManager.Position.Z));
+            Matrix cameraMatrix = Matrix.CreateTranslation(new Vector3(this.cameraManager.Position.X, 0, this.cameraManager.Position.Z));
             Matrix worldMatrix = Matrix.CreateTranslation(Vector3.Zero) * Matrix.CreateScale(200) * cameraMatrix;
 
             Matrix[] transforms = new Matrix[this.skyModel.Bones.Count];
@@ -52,7 +58,12 @@ namespace BlockEngine.Renderer {
                     effect.Parameters["World"].SetValue(world);
                     effect.Parameters["View"].SetValue(this.cameraManager.View);
                     effect.Parameters["Projection"].SetValue(this.cameraManager.Projection);
-                    effect.Parameters["Color"].SetValue(new Color(37, 60, 207).ToVector4());
+
+                    effect.Parameters["DayColor"].SetValue(this.DayColor);
+                    effect.Parameters["NightColor"].SetValue(this.NightColor);
+                    effect.Parameters["HorizonColor"].SetValue(this.HorizonColor);
+                    //effect.Parameters["MorningTint"].SetValue(this.MorningTint);
+                    //effect.Parameters["EveningTint"].SetValue(this.EveningTint);
 
                 }
 

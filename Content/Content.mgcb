@@ -19,7 +19,13 @@
 /processorParam:TextureFormat=Compressed
 /build:Fonts\Quantifier_14px.spritefont
 
-#begin Models/skydome.x
+#begin Effects/SkyDome.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Effects/SkyDome.fx
+
+#begin Models/SkyDome.x
 /importer:OpenAssetImporter
 /processor:ModelProcessor
 /processorParam:ColorKeyColor=0,0,0,0
@@ -36,11 +42,5 @@
 /processorParam:Scale=1
 /processorParam:SwapWindingOrder=False
 /processorParam:TextureFormat=DxtCompressed
-/build:Models/skydome.x
-
-#begin Effects/SkyDome.fx
-/importer:EffectImporter
-/processor:EffectProcessor
-/processorParam:DebugMode=Auto
-/build:Effects/SkyDome.fx
+/build:Models/SkyDome.x
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/Tanel/Projects/BlockEngine/BlockEngine/Content/Effects/SkyDome.fx</SourceFile>
-  <SourceTime>2016-04-04T23:10:41.9750824-04:00</SourceTime>
+  <SourceTime>2016-04-08T01:12:38.1377811-04:00</SourceTime>
   <DestFile>C:/Users/Tanel/Projects/BlockEngine/BlockEngine/Content/bin/DesktopGL/Effects/SkyDome.xnb</DestFile>
-  <DestTime>2016-04-04T23:10:45.7977436-04:00</DestTime>
+  <DestTime>2016-04-08T01:12:41.8571936-04:00</DestTime>
   <Importer>EffectImporter</Importer>
   <ImporterTime>2016-03-30T02:36:08-04:00</ImporterTime>
   <Processor>EffectProcessor</Processor>

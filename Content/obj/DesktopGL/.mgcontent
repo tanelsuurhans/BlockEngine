@@ -5,7 +5,7 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/Tanel/Projects/BlockEngine/BlockEngine/Content/Fonts/Quantifier_14px.spritefont</File>
-    <File>C:/Users/Tanel/Projects/BlockEngine/BlockEngine/Content/Models/skydome.x</File>
     <File>C:/Users/Tanel/Projects/BlockEngine/BlockEngine/Content/Effects/SkyDome.fx</File>
+    <File>C:/Users/Tanel/Projects/BlockEngine/BlockEngine/Content/Models/SkyDome.x</File>
   </SourceFiles>
 </SourceFileCollection>

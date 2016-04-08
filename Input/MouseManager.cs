@@ -29,9 +29,7 @@ namespace BlockEngine.Input {
         }
 
         public override void Update(GameTime gameTime) {
-            System.Console.WriteLine("Game is " + Game.IsActive);
-
-            if (Game.IsActive) {
+            if (Enabled) {
                 this.current = Mouse.GetState();
                 this.previous = this.current;
 
@@ -54,6 +52,13 @@ namespace BlockEngine.Input {
                 this.screenManager.ScreenWidth / 2,
                 this.screenManager.ScreenHeight / 2
             );
+        }
+
+        protected override void OnEnabledChanged(object sender, EventArgs args) {
+            if (Enabled)
+                this.CenterPosition();
+
+            base.OnEnabledChanged(sender, args);
         }
 
     }

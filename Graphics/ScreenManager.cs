@@ -1,13 +1,17 @@
-﻿using Microsoft.Xna.Framework;
+﻿using BlockEngine.Input;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace BlockEngine.Graphics {
 
     class ScreenManager : GameComponent {
 
-        GraphicsDeviceManager graphics;
+        private GraphicsDeviceManager graphics;
 
         public bool isFullScreenEnabled = false;
         public bool isVerticalSyncEnabled = false;
+
+        private KeyboardManager keyboardManager;
 
         public ScreenManager(Client client, GraphicsDeviceManager graphics) : base(client) {
             this.graphics = graphics;
@@ -16,6 +20,8 @@ namespace BlockEngine.Graphics {
         }
 
         public override void Initialize() {
+            this.keyboardManager = Game.Services.GetService<KeyboardManager>();
+
             this.graphics.PreferMultiSampling = true;
             this.graphics.PreferredBackBufferWidth = 1024;
             this.graphics.PreferredBackBufferHeight = 768;
@@ -26,6 +32,16 @@ namespace BlockEngine.Graphics {
             this.graphics.ApplyChanges();
 
             base.Initialize();
+        }
+
+        public override void Update(GameTime gameTime) {
+            if (this.keyboardManager.IsKeyPressed(Keys.F11))
+                ToggleFullScreen();
+
+            if (this.keyboardManager.IsKeyPressed(Keys.F12))
+                ToggleVerticalSync();
+
+            base.Update(gameTime);
         }
 
         public void ToggleFullScreen() {
